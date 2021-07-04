@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1231</width>
+    <height>886</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QOpenGLWidget" name="openGLWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>951</width>
+      <height>511</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>20</y>
+      <width>416</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QCheckBox" name="Show_Ray">
+       <property name="text">
+        <string>Show Ray</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="Show_Obstacle">
+       <property name="text">
+        <string>Show obstacle</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="Show_Collision">
+       <property name="text">
+        <string>Show collision</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="Show_Objects">
+       <property name="text">
+        <string>Show Objects</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QListWidget" name="object_listWidget">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>30</y>
+      <width>251</width>
+      <height>441</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>975</x>
+      <y>10</y>
+      <width>71</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Object list</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>480</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>431</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Property</string>
+     </attribute>
+     <widget class="QWidget" name="verticalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>411</width>
+        <height>197</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>object file</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="loadFiletext"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="loadButton">
+           <property name="text">
+            <string>Load</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Size</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="sizex">
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="sizey">
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="sizez">
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Color</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="colorR">
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="colorG">
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="colorB">
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="colorA">
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.100000000000000</double>
+           </property>
+           <property name="value">
+            <double>1.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Translate</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="originX">
+           <property name="minimum">
+            <double>-2147483648.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>2147483648.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="originY">
+           <property name="minimum">
+            <double>-2147483648.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>2147483648.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="originZ">
+           <property name="minimum">
+            <double>-2147483648.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>2147483648.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Rotation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="rotX">
+           <property name="minimum">
+            <double>-360.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>360.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="rotY">
+           <property name="minimum">
+            <double>-360.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>360.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="rotZ">
+           <property name="minimum">
+            <double>-360.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>360.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="obj_property_button">
+         <property name="text">
+          <string>Set Property</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="objectButton">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>220</y>
+        <width>409</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>Create Object</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Script</string>
+     </attribute>
+     <widget class="QWidget" name="verticalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>401</width>
+        <height>193</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>C++scripts</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="loadScriptText"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>Load</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QListWidget" name="scriptListWidget"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>Add</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>Delete</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Set</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Physics</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>361</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Collision property</string>
+      </property>
+      <widget class="QWidget" name="horizontalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>261</width>
+         <height>56</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="collider">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Collider</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="text">
+             <string>Set Rectangle</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_8">
+            <property name="text">
+             <string>Set Sphere</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>361</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Physics property</string>
+      </property>
+      <widget class="QWidget" name="horizontalLayoutWidget_8">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>20</y>
+         <width>160</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QRadioButton" name="radioButton">
+          <property name="text">
+           <string>Gravity</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>Kg</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Brain</string>
+     </attribute>
+     <widget class="QPushButton" name="moveButton">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>30</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Path Finding</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="moveButton_2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>70</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Attack</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QToolBox" name="toolBox">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>530</y>
+      <width>311</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>311</width>
+       <height>209</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Environments</string>
+     </attribute>
+     <widget class="QPushButton" name="obstacleButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set Obstacle Tile</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="obstacleButton_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>271</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Set Light</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>311</width>
+       <height>209</height>
+      </rect>
+     </property>
+     <attribute name="label">
+      <string>Game Setting</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>231</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export Data</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1231</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>moveButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>move_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>877</x>
+     <y>582</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>898</x>
+     <y>608</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>obstacleButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>obstacle_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>550</x>
+     <y>641</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>634</x>
+     <y>702</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>objectButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>object_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>564</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>742</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>object_listWidget</sender>
+   <signal>itemClicked(QListWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>list_item_click_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1062</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1013</x>
+     <y>767</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>delete_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1155</x>
+     <y>567</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1097</x>
+     <y>605</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>loadButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>372</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>611</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>obj_property_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>property_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>756</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>757</x>
+     <y>742</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>load_script_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>397</x>
+     <y>586</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>468</x>
+     <y>636</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>script_add_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>691</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>476</x>
+     <y>708</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>script_delete_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>275</x>
+     <y>724</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>477</x>
+     <y>750</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>script_set_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>237</x>
+     <y>755</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>806</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>AABB_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>624</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>496</x>
+     <y>732</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>collider</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>collider_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>635</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>482</x>
+     <y>789</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sphere_slot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>281</x>
+     <y>650</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>480</x>
+     <y>662</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>obstacle_slot()</slot>
+  <slot>load_slot()</slot>
+  <slot>move_slot()</slot>
+  <slot>object_slot()</slot>
+  <slot>list_item_click_slot()</slot>
+  <slot>property_slot()</slot>
+  <slot>delete_slot()</slot>
+  <slot>load_script_slot()</slot>
+  <slot>script_add_slot()</slot>
+  <slot>script_delete_slot()</slot>
+  <slot>script_set_slot()</slot>
+  <slot>AABB_slot()</slot>
+  <slot>test_slot()</slot>
+  <slot>collider_slot()</slot>
+  <slot>sphere_slot()</slot>
+ </slots>
+</ui>
