@@ -31,6 +31,25 @@ And the most of leak is occured from the loading part if statments :-)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 [solution]
         free(temp.vertices.data);
         free(temp.text_coor.data);
