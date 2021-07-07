@@ -2,3 +2,40 @@ this version has the memory leak
 I left this for you to practice and understanding more deeply.
 Hint is free can be use inside of for and the end of the algorithm.
 And the most of leak is occured from the loading part if statments :-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[solution]
+        free(temp.vertices.data);
+        free(temp.text_coor.data);
+        free(temp.normals.data);
+        free(temp.ind_v.data);
+        free(temp.ind_t.data);
+        free(temp.ind_n.data);
+        std::printf("\nfinishing\n");
