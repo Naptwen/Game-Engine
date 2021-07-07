@@ -106,7 +106,7 @@ DLLEXPORT unsigned int count(char* text, const char* Delimiter) {
     free(copy_txt);
     return i - 1;
 }
-
+// the only left c++ is the vector<objData> part to make pure c, instead of vector using dyanmaic memory by malloc.
 DLLEXPORT bool loading(std::vector<objData>* list, const char* const file_name) {
     std::printf("loading\n");
     char line[255];
