@@ -175,7 +175,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->text_coor_list = (double**)malloc(text_coor_list.size() * sizeof(double*));
     for (unsigned int i = 0; i < text_coor_list.size(); i++)
         temp->text_coor_list[i] = (double*)malloc(text_coor_list[i].size() * sizeof(double));
-    temp->text_coor_size = (unsigned int*)malloc(text_coor.size() * sizeof(unsigned int));
+    temp->text_coor_size = (unsigned int*)malloc(text_coor_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < text_coor_list.size(); i++)
     {
         temp->text_coor_size[i] = text_coor.size();
@@ -186,7 +186,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->ind_v_list = (unsigned int**)malloc(ind_v_list.size() * sizeof(unsigned int*));
     for (unsigned int i = 0; i < ind_v_list.size(); i++)
         temp->ind_v_list[i] = (unsigned int*)malloc(ind_v_list[i].size() * sizeof(unsigned int));
-    temp->ind_v_size = (unsigned int*)malloc(ind_v.size() * sizeof(unsigned int));
+    temp->ind_v_size = (unsigned int*)malloc(ind_v_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < ind_v_list.size(); i++)
     {
         temp->ind_v_size[i] = ind_v.size();
@@ -198,7 +198,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->ind_n_list = (unsigned int**)malloc(ind_n_list.size() * sizeof(unsigned int*));
     for (unsigned int i = 0; i < ind_v_list.size(); i++)
         temp->ind_n_list[i] = (unsigned int*)malloc(ind_n_list[i].size() * sizeof(unsigned int));
-    temp->ind_n_size = (unsigned int*)malloc(ind_n.size() * sizeof(unsigned int));
+    temp->ind_n_size = (unsigned int*)malloc(ind_n_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < ind_n_list.size(); i++)
     {
         temp->ind_n_size[i] = ind_n.size();
@@ -209,7 +209,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->ind_t_list = (unsigned int**)malloc(ind_t_list.size() * sizeof(unsigned int*));
     for (unsigned int i = 0; i < ind_t_list.size(); i++)
         temp->ind_t_list[i] = (unsigned int*)malloc(ind_t_list[i].size() * sizeof(unsigned int));
-    temp->ind_t_size = (unsigned int*)malloc(ind_t.size() * sizeof(unsigned int));
+    temp->ind_t_size = (unsigned int*)malloc(ind_t_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < ind_t_list.size(); i++)
     {
         temp->ind_t_size[i] = ind_t.size();
