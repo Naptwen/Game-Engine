@@ -136,6 +136,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
                 ind_v.clear();
                 ind_n.clear();
                 ind_t.clear();
+                temp->object_size++;
             }
         }
     }
@@ -145,7 +146,8 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     ind_v_list.push_back(ind_v); 
     ind_n_list.push_back(ind_n); 
     ind_t_list.push_back(ind_t); 
-    
+    temp->object_size++;
+
     temp->vertices_list = (double**)malloc(vertices_list.size() * sizeof(double*));
     for (int i = 0; i < vertices_list.size(); i++)
         temp->vertices_list[i] = (double*)malloc(vertices.size() * sizeof(double));
