@@ -24,6 +24,35 @@ DLLEXPORT C_obj* CHello_new() {
     return chello;
 }
 
+template <typename T>
+void doubleFree(T** ptr, int size) {
+    if (ptr != nullptr) {
+        for (int i = 0; i < size; i++)
+            std::free(ptr[i]);
+        std::free(ptr);
+    }
+}
+
+DLLEXPORT void CHello_free(C_obj* temp) {
+    doubleFree(temp->vertices_list, temp->sub_count);
+    if (temp->vertices_size != nullptr) 
+        free(temp->vertices_size);
+    doubleFree(temp->normals_list, temp->sub_count);
+    if (temp->normals_size != nullptr)
+        free(temp->normals_size);
+    doubleFree(temp->text_coor_list, temp->sub_count);
+    if (temp->text_coor_size != nullptr)
+        free(temp->text_coor_size);
+    doubleFree(temp->ind_v_list, temp->sub_count);
+    if (temp->ind_v_size != nullptr)
+        free(temp->ind_v_size);    
+    doubleFree(temp->ind_n_list, temp->sub_count);
+    if (temp->ind_n_size != nullptr)
+        free(temp->ind_n_size);
+    doubleFree(temp->ind_t_list, temp->sub_count);
+    if (temp->ind_t_size != nullptr)
+        free(temp->ind_t_size);
+}
 DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     std::printf("C++ : c_obj file try to load file %s\n", file_name);;
     char line[255];

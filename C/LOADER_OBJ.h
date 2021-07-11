@@ -15,9 +15,10 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-
-//reference from https://stackoverflow.com/questions/18780570/passing-a-c-stdvector-to-numpy-array-in-python
 using namespace std;
+
+template <typename T>
+void doubleFree(T** ptr, int size);
 
 float counting(char* text, const char* Delimiter);
 extern "C" {
@@ -38,6 +39,8 @@ extern "C" {
 		const char* mtllib = "";
 	};
 }
+
+DLLEXPORT void CHello_free(C_obj* temp);
 
 DLLEXPORT C_obj* CHello_new();
 
