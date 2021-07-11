@@ -9,7 +9,7 @@ class CHello(Structure):
 
 
 CHello._fields_ = [
-        ("object_size", c_int),
+        ("sub_count", c_uint),
         ("vertices_list", POINTER(POINTER(c_double))),
         ("vertices_size", POINTER(c_uint)),
         ("normals_list", POINTER(POINTER(c_double))),
@@ -38,14 +38,17 @@ mydll.CHello_loading.restype = c_void_p
 
 class cello():
     obj = POINTER(CHello)
-
+    vertices = []
     def __init__(self):
         self.obj = mydll.CHello_new(1)
 
     def loading(self, file_name):
         file_name = create_string_buffer(file_name.encode('utf-8'))
         mydll.CHello_loading(self.obj, file_name)
-        for obj in range(self.obj.object_size):
-            vec_size = self.obj[0].vertices_size[0]
-            print(self.obj[0].vertices_list[0][0:vec_size])
-            
+        print(self.obj[0].sub_count)
+        for index in range(self.obj[0].sub_count):
+            vec_size = self.obj[0].vertices_size[index]
+            new_vec = self.obj[index].vertices_list[index][0:vec_size]
+            self.vertices.append(new_vec)
+            print(self.vertices)
+
