@@ -1,4 +1,3 @@
-//reference from https://stackoverflow.com/questions/18780570/passing-a-c-stdvector-to-numpy-array-in-python
 #include "pch.h"
 #include "LOADER_OBJ.h"
 
@@ -42,6 +41,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     std::vector<unsigned int> ind_v;
     std::vector<unsigned int> ind_n;
     std::vector<unsigned int> ind_t;
+    unsigned int obj_counts = 0;
     while (fgets(line, 255, myfile)) {
         char* data = strtok(line, " ");
         if (!(strcmp(data, "v"))) {
@@ -99,7 +99,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
                     ind_v.push_back(ptr1);
                     ind_n.push_back(ptr2);;
                 }
-                free(token);
+                std::free(token);
             }
             else {
                 char* data2 = strtok(left_txt, " ");
@@ -136,7 +136,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
                 ind_v.clear();
                 ind_n.clear();
                 ind_t.clear();
-                temp->object_size++;
+                obj_counts++;
             }
         }
     }
@@ -146,7 +146,9 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     ind_v_list.push_back(ind_v); 
     ind_n_list.push_back(ind_n); 
     ind_t_list.push_back(ind_t); 
-    temp->object_size++;
+    obj_counts++;
+
+    temp->sub_count = obj_counts;
 
     temp->vertices_list = (double**)malloc(vertices_list.size() * sizeof(double*));
     for (int i = 0; i < vertices_list.size(); i++)
@@ -181,20 +183,21 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
             temp->text_coor_list[i][j] = text_coor_list[i][j];
     }
 
-    temp->ind_v_list = (unsigned int**)malloc(ind_v_list.size() * sizeof(double*));
+    temp->ind_v_list = (unsigned int**)malloc(ind_v_list.size() * sizeof(unsigned int*));
     for (int i = 0; i < ind_v_list.size(); i++)
-        temp->ind_v_list[i] = (unsigned int*)malloc(ind_v.size() * sizeof(double));
+        temp->ind_v_list[i] = (unsigned int*)malloc(ind_v.size() * sizeof(unsigned int));
     temp->ind_v_size = (unsigned int*)malloc(ind_v.size() * sizeof(unsigned int));
     for (int i = 0; i < ind_v_list.size(); i++)
     {
         temp->ind_v_size[i] = ind_v.size();
         for (int j = 0; j < ind_v.size(); j++)
             temp->ind_v_list[i][j] = ind_v_list[i][j];
+            
     }
 
-    temp->ind_n_list = (unsigned int**)malloc(ind_n_list.size() * sizeof(double*));
+    temp->ind_n_list = (unsigned int**)malloc(ind_n_list.size() * sizeof(unsigned int*));
     for (int i = 0; i < ind_v_list.size(); i++)
-        temp->ind_n_list[i] = (unsigned int*)malloc(ind_n.size() * sizeof(double));
+        temp->ind_n_list[i] = (unsigned int*)malloc(ind_n.size() * sizeof(unsigned int));
     temp->ind_n_size = (unsigned int*)malloc(ind_n.size() * sizeof(unsigned int));
     for (int i = 0; i < ind_n_list.size(); i++)
     {
@@ -203,9 +206,9 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
             temp->ind_n_list[i][j] = temp->ind_n_list[i][j];
     }
 
-    temp->ind_t_list = (unsigned int**)malloc(ind_t_list.size() * sizeof(double*));
+    temp->ind_t_list = (unsigned int**)malloc(ind_t_list.size() * sizeof(unsigned int*));
     for (int i = 0; i < ind_t_list.size(); i++)
-        temp->ind_t_list[i] = (unsigned int*)malloc(ind_t.size() * sizeof(double));
+        temp->ind_t_list[i] = (unsigned int*)malloc(ind_t.size() * sizeof(unsigned int));
     temp->ind_t_size = (unsigned int*)malloc(ind_t.size() * sizeof(unsigned int));
     for (int i = 0; i < ind_t_list.size(); i++)
     {
