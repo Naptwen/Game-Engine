@@ -65,9 +65,5 @@ class Loader:
         for index in range(self.obj[0].sub_count):
             ind_v_size = self.obj[0].ind_v_size[index]
             new_ind_v = self.obj[0].ind_v_list[index][0:ind_v_size]
-            print(self.obj[0].ind_v_list[index][0])
-            print(new_ind_v)
-            print("asdasdasdasdasdasdasdasdasdass")
             self.ind_v.append(new_ind_v)
-        print('1',self.ind_v)
 
