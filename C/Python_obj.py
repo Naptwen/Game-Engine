@@ -1,3 +1,4 @@
+import numpy as np
 import os.path
 from ctypes import *
 
@@ -8,7 +9,7 @@ class CHello(Structure):
 
 
 CHello._fields_ = [
-        ("test", c_int),
+        ("object_size", c_int),
         ("vertices_list", POINTER(POINTER(c_double))),
         ("vertices_size", POINTER(c_uint)),
         ("normals_list", POINTER(POINTER(c_double))),
@@ -44,5 +45,7 @@ class cello():
     def loading(self, file_name):
         file_name = create_string_buffer(file_name.encode('utf-8'))
         mydll.CHello_loading(self.obj, file_name)
-        print(self.obj[0].vertices_list[0][0])
-        print(self.obj[0].vertices_size[0])
+        for obj in range(self.obj.object_size):
+            vec_size = self.obj[0].vertices_size[0]
+            print(self.obj[0].vertices_list[0][0:vec_size])
+            
