@@ -156,8 +156,8 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->vertices_size = (unsigned int*)malloc(vertices_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < vertices_list.size(); i++)
     {
-        temp->vertices_size[i] = vertices.size();
-        for (int j = 0; j < vertices.size(); j++)
+        temp->vertices_size[i] = vertices_list[i].size();
+        for (int j = 0; j < vertices_list[i].size(); j++)
             temp->vertices_list[i][j] = vertices_list[i][j];
     }
     
@@ -167,8 +167,8 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->normals_size = (unsigned int*)malloc(normals_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < normals_list.size(); i++)
     {
-        temp->normals_size[i] = normals.size();
-        for (int j = 0; j < normals.size(); j++)
+        temp->normals_size[i] = normals_list[i].size();
+        for (int j = 0; j < normals_list[i].size(); j++)
             temp->normals_list[i][j] = normals_list[i][j];
     }
 
@@ -178,8 +178,8 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->text_coor_size = (unsigned int*)malloc(text_coor_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < text_coor_list.size(); i++)
     {
-        temp->text_coor_size[i] = text_coor.size();
-        for (int j = 0; j < text_coor.size(); j++)
+        temp->text_coor_size[i] = text_coor_list[i].size();
+        for (int j = 0; j < text_coor_list[i].size(); j++)
             temp->text_coor_list[i][j] = text_coor_list[i][j];
     }
 
@@ -189,8 +189,8 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->ind_v_size = (unsigned int*)malloc(ind_v_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < ind_v_list.size(); i++)
     {
-        temp->ind_v_size[i] = ind_v.size();
-        for (int j = 0; j < ind_v.size(); j++)
+        temp->ind_v_size[i] = ind_v_list[i].size();
+        for (int j = 0; j < ind_v_list[i].size(); j++)
             temp->ind_v_list[i][j] = ind_v_list[i][j];
             
     }
@@ -201,9 +201,9 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->ind_n_size = (unsigned int*)malloc(ind_n_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < ind_n_list.size(); i++)
     {
-        temp->ind_n_size[i] = ind_n.size();
-        for (int j = 0; j < ind_v.size(); j++)
-            temp->ind_n_list[i][j] = temp->ind_n_list[i][j];
+        temp->ind_n_size[i] = ind_n_list[i].size();
+        for (int j = 0; j < ind_n_list[i].size(); j++)
+            temp->ind_n_list[i][j] = ind_n_list[i][j];
     }
 
     temp->ind_t_list = (unsigned int**)malloc(ind_t_list.size() * sizeof(unsigned int*));
@@ -212,9 +212,9 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->ind_t_size = (unsigned int*)malloc(ind_t_list.size() * sizeof(unsigned int));
     for (unsigned int i = 0; i < ind_t_list.size(); i++)
     {
-        temp->ind_t_size[i] = ind_t.size();
-        for (int j = 0; j < ind_t.size(); j++)
-            temp->ind_t_list[i][j] = temp->ind_t_list[i][j];
+        temp->ind_t_size[i] = ind_t_list[i].size();
+        for (int j = 0; j < ind_t_list[i].size(); j++)
+            temp->ind_t_list[i][j] = ind_t_list[i][j];
     }
 
     fclose(myfile);

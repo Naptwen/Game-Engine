@@ -22,7 +22,7 @@ using namespace std;
 float counting(char* text, const char* Delimiter);
 extern "C" {
 	struct C_obj {
-		int object_size = 0;
+		unsigned int sub_count = 0;
 		double** vertices_list = {};
 		unsigned int* vertices_size;
 		double** normals_list = {};
