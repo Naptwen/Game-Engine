@@ -151,10 +151,10 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     temp->sub_count = obj_counts;
 
     temp->vertices_list = (double**)malloc(vertices_list.size() * sizeof(double*));
-    for (int i = 0; i < vertices_list.size(); i++)
+    for (unsigned int i = 0; i < vertices_list.size(); i++)
         temp->vertices_list[i] = (double*)malloc(vertices.size() * sizeof(double));
     temp->vertices_size = (unsigned int*)malloc(vertices_list.size() * sizeof(unsigned int));
-    for (int i = 0; i < vertices_list.size(); i++)
+    for (unsigned int i = 0; i < vertices_list.size(); i++)
     {
         temp->vertices_size[i] = vertices.size();
         for (int j = 0; j < vertices.size(); j++)
@@ -162,10 +162,10 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     }
     
     temp->normals_list = (double**)malloc(normals_list.size() * sizeof(double*));
-    for (int i = 0; i < normals_list.size(); i++)
+    for (unsigned int i = 0; i < normals_list.size(); i++)
         temp->normals_list[i] = (double*)malloc(normals.size() * sizeof(double));
     temp->normals_size = (unsigned int*)malloc(normals_list.size() * sizeof(unsigned int));
-    for (int i = 0; i < normals_list.size(); i++)
+    for (unsigned int i = 0; i < normals_list.size(); i++)
     {
         temp->normals_size[i] = normals.size();
         for (int j = 0; j < normals.size(); j++)
@@ -173,10 +173,10 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     }
 
     temp->text_coor_list = (double**)malloc(text_coor_list.size() * sizeof(double*));
-    for (int i = 0; i < text_coor_list.size(); i++)
+    for (unsigned int i = 0; i < text_coor_list.size(); i++)
         temp->text_coor_list[i] = (double*)malloc(text_coor.size() * sizeof(double));
     temp->text_coor_size = (unsigned int*)malloc(text_coor.size() * sizeof(unsigned int));
-    for (int i = 0; i < text_coor_list.size(); i++)
+    for (unsigned int i = 0; i < text_coor_list.size(); i++)
     {
         temp->text_coor_size[i] = text_coor.size();
         for (int j = 0; j < text_coor.size(); j++)
@@ -184,10 +184,10 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     }
 
     temp->ind_v_list = (unsigned int**)malloc(ind_v_list.size() * sizeof(unsigned int*));
-    for (int i = 0; i < ind_v_list.size(); i++)
+    for (unsigned int i = 0; i < ind_v_list.size(); i++)
         temp->ind_v_list[i] = (unsigned int*)malloc(ind_v.size() * sizeof(unsigned int));
     temp->ind_v_size = (unsigned int*)malloc(ind_v.size() * sizeof(unsigned int));
-    for (int i = 0; i < ind_v_list.size(); i++)
+    for (unsigned int i = 0; i < ind_v_list.size(); i++)
     {
         temp->ind_v_size[i] = ind_v.size();
         for (int j = 0; j < ind_v.size(); j++)
@@ -196,10 +196,10 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     }
 
     temp->ind_n_list = (unsigned int**)malloc(ind_n_list.size() * sizeof(unsigned int*));
-    for (int i = 0; i < ind_v_list.size(); i++)
+    for (unsigned int i = 0; i < ind_v_list.size(); i++)
         temp->ind_n_list[i] = (unsigned int*)malloc(ind_n.size() * sizeof(unsigned int));
     temp->ind_n_size = (unsigned int*)malloc(ind_n.size() * sizeof(unsigned int));
-    for (int i = 0; i < ind_n_list.size(); i++)
+    for (unsigned int i = 0; i < ind_n_list.size(); i++)
     {
         temp->ind_n_size[i] = ind_n.size();
         for (int j = 0; j < ind_v.size(); j++)
@@ -207,10 +207,10 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     }
 
     temp->ind_t_list = (unsigned int**)malloc(ind_t_list.size() * sizeof(unsigned int*));
-    for (int i = 0; i < ind_t_list.size(); i++)
+    for (unsigned int i = 0; i < ind_t_list.size(); i++)
         temp->ind_t_list[i] = (unsigned int*)malloc(ind_t.size() * sizeof(unsigned int));
     temp->ind_t_size = (unsigned int*)malloc(ind_t.size() * sizeof(unsigned int));
-    for (int i = 0; i < ind_t_list.size(); i++)
+    for (unsigned int i = 0; i < ind_t_list.size(); i++)
     {
         temp->ind_t_size[i] = ind_t.size();
         for (int j = 0; j < ind_t.size(); j++)
