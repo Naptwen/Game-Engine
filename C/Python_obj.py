@@ -29,12 +29,14 @@ dll_name = "LOADER_OBJ.dll"
 dllpath = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + dll_name
 mydll = cdll.LoadLibrary(dllpath)
 
-mydll.CHello_new.argtypes = [c_void_p]
+mydll.CHello_new.argtypes = []
 mydll.CHello_new.restype = POINTER(CHello)
 
 mydll.CHello_loading.argtypes = [POINTER(CHello), c_char_p]
 mydll.CHello_loading.restype = c_void_p
 
+mydll.CHello_free.argtyoes = [POINTER(CHello)]
+mydll.CHello_free.restype = c_void_p
 
 class Loader:
     obj = POINTER(CHello)
@@ -42,11 +44,10 @@ class Loader:
     vertices = []
     normals = []
     ind_v = []
-
+    ind_t = []
 
     def __init__(self):
-        self.obj = mydll.CHello_new(1)
-
+        self.obj = mydll.CHello_new()
 
     def loading(self, file_name):
         file_name = create_string_buffer(file_name.encode('utf-8'))
@@ -66,4 +67,12 @@ class Loader:
             ind_v_size = self.obj[0].ind_v_size[index]
             new_ind_v = self.obj[0].ind_v_list[index][0:ind_v_size]
             self.ind_v.append(new_ind_v)
+
+        for index in range(self.obj[0].sub_count):
+            ind_t_size = self.obj[0].ind_t_size[index]
+            new_ind_t = self.obj[0].ind_t_list[index][0:ind_t_size]
+            self.ind_t.append(new_ind_t)
+
+    def free(self):
+        mydll.CHello_free(self.obj[0])
 
