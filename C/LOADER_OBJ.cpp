@@ -4,12 +4,13 @@
 
 using namespace std;
 
-float counting(char* text, const char* Delimiter) {
+unsigned int counting(char* text, const char* Delimiter) {
     char* copy_txt = (char*)malloc(255 * sizeof(char));
     strcpy(copy_txt, text);
     char* token = strtok(copy_txt, Delimiter);
     float i = 0;
     while (token != NULL) {
+        printf("token = %s\n", token);
         token = strtok(NULL, Delimiter);
         i++;
     }
@@ -72,6 +73,7 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
     std::vector<unsigned int> ind_t;
     unsigned int obj_counts = 0;
     while (fgets(line, 255, myfile)) {
+        printf("text = %s\n", line);
         char* data = strtok(line, " ");
         if (!(strcmp(data, "v"))) {
             char* data1 = strtok(NULL, " ");
@@ -105,37 +107,25 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
         }
         else if (!(strcmp(data, "f"))) {
             char* left_txt = strtok(NULL, "");
-            double dslash = 0;
-            double slash = counting(left_txt, "/");
-            if (dslash == 0 && slash == 0) {
-                char* data1 = strtok(NULL, " ");
-                char* data2 = strtok(NULL, " ");
-                char* data3 = strtok(NULL, " ");
-                int ptr1 = { atoi(data1) - 1 };
-                int ptr2 = { atoi(data2) - 1 };
-                int ptr3 = { atoi(data3) - 1 };
-                ind_v.push_back(ptr1);
-                ind_v.push_back(ptr2);
-                ind_v.push_back(ptr3);
-            }
-            else if (dslash > 0) {
+            if (strstr(left_txt, "//") != NULL) {
                 char* data2 = strtok(left_txt, " ");
-                char* token = strtok(data2, "//");
-                while (data != NULL) {
+                while (data2 != NULL) {
+                    char* data3 = strtok(NULL, "");
+                    char* token = strtok(data2, "//");
                     int ptr1 = { atoi(token) - 1 };
                     token = strtok(NULL, "//");
                     int ptr2 = { atoi(token) - 1 };
                     ind_v.push_back(ptr1);
                     ind_n.push_back(ptr2);;
+                    data2 = strtok(data3, " ");
                 }
-                std::free(token);
             }
-            else {
+            else if (strstr(left_txt, "/") != NULL){
                 char* data2 = strtok(left_txt, " ");
                 while (data2 != NULL) {
                     char* data3 = strtok(NULL, "");
                     char* token = strtok(data2, "/");
-                    int ptr1 = atof(token) - 1;
+                    int ptr1 = atoi(token) - 1;
                     token = strtok(NULL, "/");
                     int ptr2 = atoi(token) - 1;
                     token = strtok(NULL, "/");
@@ -146,12 +136,23 @@ DLLEXPORT void CHello_loading(C_obj* temp, const char* file_name) {
                     data2 = strtok(data3, " ");
                 }
             }
+            else {
+                char* data1 = strtok(left_txt, " ");
+                char* data2 = strtok(NULL, " ");
+                char* data3 = strtok(NULL, " ");
+                int ptr1 = { atoi(data1) - 1 };
+                int ptr2 = { atoi(data2) - 1 };
+                int ptr3 = { atoi(data3) - 1 };
+                ind_v.push_back(ptr1);
+                ind_v.push_back(ptr2);
+                ind_v.push_back(ptr3);
+            }
         }
         else if (!(strcmp(data, "mtllib"))) {
             const char* data1 = (const char*) strtok(NULL, " ");
             temp->mtllib = data1;
         }
-        else if (!(strcmp(data, "o"))) {
+        else if (!(strcmp(data, "o")) || !(strcmp(data, "g"))) {
             if (vertices.size() > 0) {
                 vertices_list.push_back(vertices);
                 normals_list.push_back(normals);

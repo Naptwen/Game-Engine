@@ -20,7 +20,7 @@ using namespace std;
 template <typename T>
 void doubleFree(T** ptr, int size);
 
-float counting(char* text, const char* Delimiter);
+unsigned int counting(char* text, const char* Delimiter);
 extern "C" {
 	struct C_obj {
 		unsigned int sub_count = 0;
