@@ -145,39 +145,7 @@ void TEST()
 
 }
 */
-/*
-void neural_test()
-{
-printf("GLFW START\n");
-	//SET UP DATA
-	float input[10] = { 1,2,3,4,5,6,7,8,9,10 };
-	float target[4] = { 0.2,0.3,0.3,0.2 };
-	float output[4] = { 0,0,0,0 };
 
-	//SET UP LAYER
-	NEURON_BLOCKF myNeuron ;
-	myNeuron.ADD_LAYER(10, NONE); //THE FIRST LAYER IS INPUT LAYER WITH NO ACTIVATION
-	myNeuron.ADD_LAYER(10, ReLU); //THE SECON IS HIDDEN
-	myNeuron.ADD_LAYER(10, ReLU); //THE THIRD IS HIDDEN
-	myNeuron.ADD_LAYER(4, NONE); //THE LAST IS OUTPUT LAYER
-	myNeuron.W_INIT(HENORM);
-	myNeuron.LEARN_SET(0.9, 0.0001, MEAN, NEST);
-	//SETUP THE LEARNING METHODS, 0.9 velocity, 0.0005 learning rate, Mean square error check, Nesterov optimizaer
-	myNeuron.INPUT(input, 10); //SETUP INPUT DATA
-	while (true)
-	{
-		myNeuron.CPU_RUN(true);//CUDA_RUN(&myNeuron, true);
-		myNeuron.OUTPUT(output, 4);
-		double error = myNeuron.LOSS_CHECK(target);
-		if (error < 0.01) //IF IT IS LESS THAN 0.001
-			break;
-		std::printf("error %g\n", error);
-		myNeuron.CPU_BACK_PROPA(target);// GPU_BACK_PROPA(&myNeuron, target);
-	}
-	myNeuron.OUTPUT(output, 4);
-	std::printf("The neuron suggestes = {%f, %f, %f, %f}\n", output[0], output[1], output[2], output[3]);
-}
-*/
 
 int main()
 {
