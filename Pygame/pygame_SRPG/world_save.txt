@@ -1,0 +1,25 @@
+35,35
+13,4,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+10,5,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+14,6,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+10,8,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+16,8,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+28,8,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+13,9,<CASTLE>,[1 Turn per],alliance,0,0,0,0,0,0,0
+25,10,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+8,11,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+20,11,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+14,12,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+11,13,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+28,14,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+16,15,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+26,15,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+11,16,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+24,17,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+21,20,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+11,21,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+25,21,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+22,22,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+9,24,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+14,25,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
+12,27,<CASTLE>,[1 Turn per],enemy,0,0,0,0,0,0,0
